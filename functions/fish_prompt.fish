@@ -25,6 +25,11 @@ function fish_prompt
   set -l green (set_color -o green)
   set -l normal (set_color normal)
 
+# adds user@hostname if on ssh connection
+  if test -n "$SSH_CONNECTION"
+    set host "$yellow$USER@$hostname "
+  end
+
   if test $last_status = 0
       set arrow "$green➜ "
   else
@@ -42,6 +47,5 @@ function fish_prompt
     end
   end
 
-  echo -n -s $arrow ' ' $cwd $git_info $normal ' '
+  echo -n -s $host $arrow ' ' $cwd $git_info $normal ' '
 end
-
