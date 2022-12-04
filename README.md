@@ -4,6 +4,16 @@ The default theme – cloned from oh-my-zsh.
 
 ![robbyrussell theme][screenshot]
 
+#### My Changes
+
+- Added user@hostname on an ssh connection.
+
+#### Installation
+
+```fish
+fisher install tekoh/theme-robbyrussell
+```
+
 #### Characteristics
 
 - Displays git information in the command prompt when available.
