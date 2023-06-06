@@ -4,6 +4,10 @@ function fish_right_prompt
   if set -q $theme_show_right_pwd
     echo ""
   else
-    echo -n -s $cyan (prompt_pwd)
+    if test (prompt_pwd) = "~"
+      echo ""
+    else
+      echo -n -s $cyan (prompt_pwd)
+    end
   end
 end
